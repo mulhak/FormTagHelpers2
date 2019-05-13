@@ -26,7 +26,7 @@ namespace FormTagHelpers2.Controllers
         {
             return View();
         }
-
+        //this is working after reboot of file
         [HttpPost]
         [ValidateAntiForgeryTokenAttribute]
         public IActionResult AddFruit(Fruit fruit)
