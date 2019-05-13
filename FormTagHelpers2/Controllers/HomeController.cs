@@ -27,5 +27,13 @@ namespace FormTagHelpers2.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryTokenAttribute]
+        public IActionResult AddFruit(Fruit fruit)
+        {
+            repository.AddFruit(fruit);
+            return RedirectToAction("Index");
+        }
+
     }
 }
