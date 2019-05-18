@@ -12,21 +12,31 @@ namespace FormTagHelpers2.Controllers
     {
         private IRepository repository;
 
+        // i need to look at a controller class for Veg as i cannot display it browser like this!!!!!!!!
+        private IRepositoryVeg repositoryVeg;
+
         public HomeController(IRepository repo)
         {
             repository = repo;
         }
-
+        public HomeController(IRepositoryVeg repo)
+        {
+            repositoryVeg = repo;
+        }
+            
+     
         public IActionResult Index()
         {
             return View(repository.Fruits);
+            
         }
 
         public IActionResult AddFruit()
         {
             return View();
         }
-        //this is working after reboot of file
+       
+
         [HttpPost]
         [ValidateAntiForgeryTokenAttribute]
         public IActionResult AddFruit(Fruit fruit)

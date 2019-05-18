@@ -32,6 +32,7 @@ namespace FormTagHelpers2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddSingleton<IRepositoryVeg, VegRepo>();
             services.AddSingleton<IRepository, FruitRepo>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
