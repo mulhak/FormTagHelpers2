@@ -1,24 +1,32 @@
 ﻿@model Fruit
 
-<h1 class ="page-title">Add fruit</h1>
+<h1 class ="page-title text-center text-capitalize text-success">Add fruit</h1>
 
 <form method="post" asp-controller="Home" asp-action="AddFruit">
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input class="form-control" asp-for="Name" />
-     </div>
+    <div class="bg-danger">
+        <div class="row">
+            <div class="col-md-5">
 
-    <div class="form-group">
-        <label asp-for="Price"></label>
-        <input class="form-control" asp-for="Price" />
-    </div>
+            <div class="form-group ">
+             <label asp-for="Name"></label>
+              <input class="form-control "placeholder="type of fruit" asp-for="Name" />
+            </div>
 
-    <div class="form-group">
-        <label asp-for="Qty"></label>
-        <input type="text" class="form-control" asp-for="Qty" />
-     </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input class="form-control " placeholder=" price per unit" asp-for="Price" />
+            </div>
 
-    <button class ="btn btn-primary">Add</button>
-    <a asp-controller="Home" asp-action="Index">cancel</a>
+            <div class="form-group">
+                <label asp-for="Qty"></label>
+                <input type="text" class="form-control" placeholder="how many" asp-for="Qty" />
+            </div>
+
+            <button class="btn btn-primary">Add</button>
+            <a asp-controller="Home" asp-action="Index">cancel</a>
+              
+      </div>
+        </div>
+        </div>
 </form>
 

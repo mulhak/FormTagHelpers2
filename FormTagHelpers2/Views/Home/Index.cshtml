@@ -1,25 +1,58 @@
 ﻿@model IEnumerable<Fruit>
 
-<h1 class = "page-title"> Index View</h1>
+@*First Table-- Fruits*@
 
-<table class= "table">
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Qty</th>
-    </tr>
-    @foreach (var fruit in Model)
-    {
-        <tr>
-            <td>@fruit.Name</td>
-            <td>@fruit.Price</td>
-            <td>@fruit.Qty</td>
+    <h1 class="page-title text-center text-danger "> Add Fruits or Veggies </h1>
 
-        </tr>
-    }
+       <div class="row">
+        <div class="col-md-6">
+            <table class="table bg-danger text-muted text-center">
 
+                <tr class="text-uppercase">
+                    <th class="text-center">Fruits</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Qty</th>
+                </tr>
 
-</table>
+                @foreach (var fruit in Model)
+                {
+                    <tr>
+                        <td>@fruit.Name</td>
+                        <td>@fruit.Price</td>
+                        <td>@fruit.Qty</td>
 
-<a asp-controller="Home" asp-action="AddFruit">Add another fruit</a>
+                    </tr>
+                }
 
+            </table>
+
+            <a asp-controller="Home" asp-action="AddFruit">Add another fruit</a>
+        </div>
+
+        @*second Table -- Veggies*@
+
+        <div class="col-md-6">
+            <table class="table bg-success text-muted text-center">
+
+                <tr class="text-uppercase">
+                    <th class="text-center">Veggies</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Qty</th>
+                </tr>
+
+                @foreach (var fruit in Model)
+                {
+                    <tr>
+                        <td>@fruit.Name</td>
+                        <td>@fruit.Price</td>
+                        <td>@fruit.Qty</td>
+
+                    </tr>
+                }
+
+            </table>
+
+            <a asp-controller="Home" asp-action="AddFruit">Add another fruit</a>
+
+        </div>
+    </div>

@@ -10,16 +10,16 @@ namespace FormTagHelpers2.Controllers
 {
     public class HomeController : Controller
     {
-        private  IRepository repository;
+        private IRepository repository;
 
         public HomeController(IRepository repo)
         {
             repository = repo;
         }
 
-        public IActionResult Index()   
+        public IActionResult Index()
         {
-          return View(repository.Fruits);
+            return View(repository.Fruits);
         }
 
         public IActionResult AddFruit()
@@ -34,6 +34,14 @@ namespace FormTagHelpers2.Controllers
             repository.AddFruit(fruit);
             return RedirectToAction("Index");
         }
+
+      //model binding example- shows first fruit in form in addfruit page
+
+        public IActionResult EditFruit()
+        {
+            return View("AddFruit", repository.Fruits.First());
+        }
+
 
     }
 }
